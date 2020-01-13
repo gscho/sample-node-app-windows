@@ -1,0 +1,5 @@
+{
+  "title": "{{ cfg.title }}",
+  "message": "You are running sample-node-app-windows",
+  "port": {{ cfg.port }}
+}

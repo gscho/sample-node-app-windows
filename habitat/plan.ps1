@@ -12,11 +12,11 @@
 # To explore all Habitat-maintained and community-contributed packages,
 # visit the Habitat Builder depot at https://bldr.habitat.sh/#/pkgs.
 
-$pkg_name=sample-node-app-windows
-$pkg_origin=your_origin
+$pkg_name="sample-node-app-windows"
+$pkg_origin="your_origin"
 $pkg_version="1.0.0"
-$pkg_deps=(core/node)
-$pkg_svc_user=root
+$pkg_deps=@("core/node")
+$pkg_svc_user="root"
 
 # Habitat provides you with a number of built-in "callbacks" to use
 # in the course of your build, all of which are explained in the docs

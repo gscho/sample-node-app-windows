@@ -41,16 +41,7 @@ function Invoke-Install{
   # In this callback, we copy the files that our application requires at runtime
   # into that directory, and once this step completes, Habitat will take
   # over to produce the finished package as a .hart file.
-  set app_path="$pkg_prefix/app"
-  mkdir -p "$env:app_path"
+  mkdir -p "$pkg_prefix\app"
 
-  cp -R \
-    node_modules \
-    public \
-    routes \
-    views \
-    package.json \
-    app.js \
-    index.js \
-    $env:app_path
+  Copy-Item -Path node_modules,public,routes,views,package.json,app.js,index.js -Destination "$pkg_prefix\app" -Recurse -ErrorAction SilentlyContinue
 }

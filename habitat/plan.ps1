@@ -25,13 +25,15 @@ $pkg_svc_user="root"
 # Here, we're implementing the do_build and do_install callbacks
 # to install dependencies and assemble the application package.
 
-function Invoke-Build{
+function Invoke-Build {
+  Push-Location ${PLAN_CONTEXT}\..
 
   # By default, we're in the directory in which the Studio was entered
   # (in this case, presumably the project root), so we can run commands
   # as though we were in that same directory. By the time we reach this
   # callback, `npm` will have been installed for us.
   npm install
+  Pop-Location
 }
 
 function Invoke-Install{
@@ -43,5 +45,7 @@ function Invoke-Install{
   # over to produce the finished package as a .hart file.
   mkdir -p "$pkg_prefix\app"
 
+  Push-Location ${PLAN_CONTEXT}\..
   Copy-Item -Path node_modules,public,routes,views,package.json,app.js,index.js -Destination "$pkg_prefix\app" -Recurse -ErrorAction SilentlyContinue
+  Pop-Location
 }

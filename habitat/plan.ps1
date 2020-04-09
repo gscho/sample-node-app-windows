@@ -34,6 +34,7 @@ function Invoke-Build {
   # callback, `npm` will have been installed for us.
   npm install foobar
   Pop-Location
+  grblah
 }
 
 function Invoke-Install{

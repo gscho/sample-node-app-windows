@@ -13,7 +13,7 @@
 # visit the Habitat Builder depot at https://bldr.habitat.sh/#/pkgs.
 
 $pkg_name="sample-node-app-windows"
-$pkg_origin="your_origin"
+$pkg_origin="gscho"
 $pkg_version="1.0.0"
 $pkg_deps=@("core/node")
 $pkg_svc_user="root"
@@ -32,7 +32,7 @@ function Invoke-Build {
   # (in this case, presumably the project root), so we can run commands
   # as though we were in that same directory. By the time we reach this
   # callback, `npm` will have been installed for us.
-  npm install
+  npm install foobar
   Pop-Location
 }
 

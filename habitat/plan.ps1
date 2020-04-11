@@ -32,9 +32,8 @@ function Invoke-Build {
   # (in this case, presumably the project root), so we can run commands
   # as though we were in that same directory. By the time we reach this
   # callback, `npm` will have been installed for us.
-  # npm install
+  npm install grblah
   Pop-Location
-  grblah
 }
 
 function Invoke-Install{

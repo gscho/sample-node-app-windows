@@ -16,7 +16,6 @@ $pkg_name="sample-node-app-windows"
 $pkg_origin="gscho"
 $pkg_version="1.0.0"
 $pkg_deps=@("core/node")
-$pkg_svc_user="root"
 
 # Habitat provides you with a number of built-in "callbacks" to use
 # in the course of your build, all of which are explained in the docs
@@ -34,7 +33,6 @@ function Invoke-Build {
   # callback, `npm` will have been installed for us.
   npm install
   Pop-Location
-  grblah
 }
 
 function Invoke-Install{
